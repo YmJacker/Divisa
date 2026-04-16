@@ -1,22 +1,21 @@
 <script lang="ts">
     import type { PageProps } from "./$types";
-
     let { data }: PageProps = $props();
+
+    import DateComponent from "$lib/components/DateDisplay.svelte";
+
+    console.log(data)
 </script>
 
 <div class="flex justify-center items-center h-screen">
-    <div class="text-center">
-
-        <label for="ciudad">Selecciona o escribe una ciudad:</label>
-        <input list="ciudades" name="ciudad" id="ciudad" />
-        <datalist id="ciudades">
-            <option value="Madrid"/>
-            <option value="Barcelona"/>
-            <option value="Valencia"/>
-            <option value="Sevilla"/>
-        </datalist>
-
-
+    <div class="text-center flex flex-col">
+        <DateComponent dateInfo= {data.date}/>
+        <div class="flex flex-row">
+            <!-- {#each data.data as x}
+                <div class="bg-sky-500">{x.name}</div>
+            {/each} -->
+        </div>
+        
     </div>
 </div>
 
