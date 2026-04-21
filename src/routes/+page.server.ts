@@ -1,5 +1,5 @@
 import { CRIPTO_API_KEY, CURRENCY_API_KEY } from "$env/static/private";
-/* 
+///* 
 async function call(){
     let response: any = {data: []};
 
@@ -43,7 +43,7 @@ async function call(){
 
 
     [...criptoResponse.data].forEach(x =>{
-        response.data.push(x.symbol = {name: x.name, symbol: x.symbol, sign: x.symbol, price: x.quote.USD.price })
+        response.data.push(x.symbol = {name: x.name, symbol: x.symbol, sign: x.symbol, price: 1/x.quote.USD.price })
     });
     [...fiatResponse.data].forEach(x =>{
         if(currencyResponse.data[x.symbol]?.value){
@@ -53,7 +53,7 @@ async function call(){
     response.date = criptoResponse.status.timestamp
     return response
 }
-*/
+//*/
 
 
 //example
@@ -61,7 +61,7 @@ export const load = () => {
     return call();
 };
 
-///*
+/*
 function call() {
     const fecha = new Date().toISOString();
     const a = {
@@ -119,16 +119,16 @@ function call() {
                 name: 'Bitcoin',
                 symbol: 'BTC',
                 sign: 'BTC',
-                price: 75959.64584106281
+                price: 1/75959.64584106281
             },
             {
                 name: 'Ethereum',
                 symbol: 'ETH',
                 sign: 'ETH',
-                price: 2406.6583399550696
+                price: 1/2406.6583399550696
             },
         ]
     }
     return a;
 }
-//*/
+*/
